@@ -136,6 +136,10 @@ dictionary = {
         ("*", "Bone Constraint Switch Tool"): "骨骼约束开关工具",
         ("", "Constraint Name"): "约束名称",
         ("", "Enable Legacy 0.56 Version"): "启用 Legacy 0.56 版本功能",
+        ("Operator", "Open Proxy Model"): "启用代理模型",
+        ("Operator", "Proxy Model Adjust"): "代理模型调整",
+        ("", "Display Size X"): "显示大小X",
+        ("", "Display Size Z"): "显示大小Z",
     }
 }
 

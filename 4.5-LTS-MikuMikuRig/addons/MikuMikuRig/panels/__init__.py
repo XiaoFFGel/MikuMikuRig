@@ -194,6 +194,11 @@ class MMR_property(bpy.types.PropertyGroup):
         default=False
     )
 
+    openproxy : BoolProperty(
+        name="Open Proxy",
+        default=False
+    )
+
     # 额外选项
     extras_enabled: BoolProperty(
         name="Extras Enabled",

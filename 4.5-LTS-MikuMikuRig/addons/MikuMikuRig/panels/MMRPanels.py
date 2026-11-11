@@ -21,7 +21,7 @@ from addons.MikuMikuRig.operators.reload import MMR_OT_OpenPresetFolder
 from common.i18n.i18n import i18n
 from ....common.types.framework import reg_order
 from addons.MikuMikuRig.config import __addon_name__
-
+from addons.MikuMikuRig.Proxymodel.operator import ProxyModelOperator
 
 def _mmr_panel_poll(context):
     """主版本面板 poll：use_legacy_mode=True 时隐藏"""
@@ -390,6 +390,20 @@ class MMD_Rig_Opt(bpy.types.Panel):
 
                 layout.operator(MahyPdtOperator.bl_idname, icon="MODIFIER")
 
+                # 代理模型
+                layout.operator(ProxyModelOperator.bl_idname, icon="ONIONSKIN_ON")
+
+                if mmr.openproxy:
+                    # 是否在POSE模式下
+                    if context.mode == 'POSE':
+                        # 当前选中的骨骼
+                        active_bone = context.active_bone
+
+                        if active_bone is not None:
+                            box = layout.box()
+                            box.prop(active_bone, "bbone_x", text=i18n('Display Size X'))
+                            box.prop(active_bone, "bbone_z", text=i18n('Display Size Z'))
+
                 layout.prop(mmr, "extras_enabled", text=i18n("Extras"), toggle=True,icon="PREFERENCES")
 
                 if mmr.extras_enabled:
@@ -441,6 +455,9 @@ class MMD_Rig_Opt(bpy.types.Panel):
                     # 弯曲腿部骨骼
                     row.prop(mmr, "Bend_the_leg_bones", text=i18n("Bend the leg bones"))
                     row.prop(mmr, "Bend_angle_leg", text=i18n("Bend angle"))
+
+                    layout.prop(mmr, "openproxy", text=i18n("Proxy Model Adjust"))
+
                     # 禁用手掌修正
                     layout.prop(mmr, "Disable_hand_fix", text=i18n("Disable hand fix"))
                     # 权重骨骼父级修正
