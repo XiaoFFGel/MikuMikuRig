@@ -92,6 +92,7 @@ class ProxyModelOperator(bpy.types.Operator):
                 data_bone.display_type = 'BBONE'
                 data_bone.bbone_x = data_bone.bbone_z = 0.015
 
+        # 将新骨骼分配到对应的集合中
         for collection_name, bone_names in new_bone_collections.items():
             if collection_name not in arm.data.collections:
                 new_bone_collection = arm.data.collections.new(name=collection_name)
