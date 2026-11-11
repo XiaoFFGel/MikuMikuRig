@@ -400,9 +400,10 @@ class MMD_Rig_Opt(bpy.types.Panel):
                         active_bone = context.active_bone
 
                         if active_bone is not None:
-                            box = layout.box()
-                            box.prop(active_bone, "bbone_x", text=i18n('Display Size X'))
-                            box.prop(active_bone, "bbone_z", text=i18n('Display Size Z'))
+                            if active_bone.display_type == 'BBONE':
+                                row = layout.row()
+                                row.prop(active_bone, "bbone_x", text=i18n('Display Size X'))
+                                row.prop(active_bone, "bbone_z", text=i18n('Display Size Z'))
 
                 layout.prop(mmr, "extras_enabled", text=i18n("Extras"), toggle=True,icon="PREFERENCES")
 
