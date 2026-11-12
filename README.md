@@ -1,54 +1,52 @@
+<div align="center">
+
 # MikuMikuRig
 
-【Blender 自制插件】傻瓜式MMD K帧插件 MikuMikuRig
+**【Blender 自制插件】傻瓜式 MMD K帧插件**
 
-[Blender Homemade Plugin] Foolproof MMD Keyframe Plugin MikuMikuRig
+**[Blender Homemade Plugin] Foolproof MMD Keyframe Plugin**
 
-<img width="617" height="829" alt="屏幕截图 2026-02-09 114029" src="https://github.com/user-attachments/assets/08400b7d-e782-4d0c-97f3-99aa8b25f480" />
+<img width="617" alt="MikuMikuRig 界面预览" src="https://github.com/user-attachments/assets/08400b7d-e782-4d0c-97f3-99aa8b25f480" />
 
-## 前言
-因为这个原0.56的MMR插件，对高版本的支持不太好，想要更新这个插件，发现这个代码写得太绝对了，一个不对就崩 ，而我要稳定性，不是速度，就有了这MMR
+![Blender](https://img.shields.io/badge/Blender-3.x%20%2F%204.x-orange?logo=blender&logoColor=white)
+![Platform](https://img.shields.io/badge/平台-Windows%20%7C%20Linux%20%7C%20macOS-blue)
+![License](https://img.shields.io/badge/许可-开源-green)
 
-这个版本的MMR插件是完全重构版，与 小威廉伯爵大佬的版本是不相同的，功能上有很多的区别，不要看作是0.56版的更新。
+</div>
 
-## Foreword
-The original 0.56 version of the MMR plugin did not support higher versions well. I wanted to update it, but found that the code was written too rigidly—any little issue would cause it to crash. What I need is stability, not speed, so I created this version of MMR.
+---
 
-This version of the MMR plugin is a complete rewrite. It is different from the version by the esteemed developer Xiao Weilian Bojue (小威廉伯爵), with many functional differences. It should not be seen as an update to version 0.56.
+## 📖 前言 / Foreword
 
-## 功能 Functions
+因为原 0.56 版的 MMR 插件对高版本 Blender 的支持不太好，想要更新这个插件，却发现原代码写得太绝对了——一个不对就崩。而我要的是**稳定性**，不是速度，于是就有了这个 MMR。
 
-一键为任何骨骼生成Rigify控制器.
+> 这个版本的 MMR 插件是**完全重构版**，与小威廉伯爵大佬的版本不相同，功能上有很多区别，请不要看作是 0.56 版的更新。
 
-Generate Rigify controllers for any skeleton with one click.
+The original 0.56 version of the MMR plugin did not support higher Blender versions well. I wanted to update it, but found that the code was written too rigidly—any little issue would cause a crash. What I need is **stability**, not speed, so I created this version of MMR.
 
-导入导出动作.
+> This version of the MMR plugin is a **complete rewrite**. It is different from the version by 小威廉伯爵 (Xiao Weilian Bojue), with many functional differences. It should not be seen as an update to version 0.56.
 
-Import and export actions.
+---
 
-更好的MMD物理.
+## ✨ 功能 / Functions
 
-Better MMD Physics.
+| 功能 | 说明 | Description |
+| --- | --- | --- |
+| **一键生成控制器** | 为任何骨骼生成 Rigify 控制器 | Generate Rigify controllers for any skeleton with one click |
+| **动作导入导出** | 快速导入 / 导出动作 | Import and export actions |
+| **更好的 MMD 物理** | 增强版物理模拟 | Better MMD Physics |
+| **表演面板** | 更好的形态键管理 | Performance panel (better Morph key) |
 
-表演面板(更好的形态键).
+---
 
-Performance panel (better Morph key).
+## 🎬 视频教程 / Video Tutorials
 
-视频演示：
+- [视频演示（Bilibili）](https://www.bilibili.com/video/BV1FnzpYKE8R)
+- [MMR 插件基础使用教学（Bilibili）](https://www.bilibili.com/opus/1167803398842482693)
 
-Video demonstration:
+---
 
-https://www.bilibili.com/video/BV1FnzpYKE8R
+## 🙏 调用项目 / Credits
 
-MMR插件基础使用教学：
-
-Basic Tutorial on Using the MMR Plugin:
-
-https://www.bilibili.com/opus/1167803398842482693?spm_id_from=333.1387.0.0
-
-## 调用项目 Call project
-
-BoneAnimCopy Tool
-
-MMD Tools
-
+- BoneAnimCopy Tool
+- MMD Tools
