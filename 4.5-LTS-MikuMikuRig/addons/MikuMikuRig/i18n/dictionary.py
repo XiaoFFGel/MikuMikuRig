@@ -140,6 +140,8 @@ dictionary = {
         ("Operator", "Proxy Model Adjust"): "代理模型调整",
         ("", "Display Size X"): "X",
         ("", "Display Size Z"): "Z",
+        ("Operator", "Toggle Option"): "切换可选",
+        ("Operator", "Proxy Visibility"): "代理可见",
     }
 }
 

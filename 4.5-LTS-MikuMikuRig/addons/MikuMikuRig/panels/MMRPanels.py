@@ -1,6 +1,8 @@
 import bpy
 from numpy.f2py.capi_maps import depargs
 
+from ..operators.Proxymodel.operator import SwitchProxyOperator, ProxyModelOperator, ItsclearproxyOperator
+
 from addons.MikuMikuRig.operators.MMRpresets import mmrmakepresetsOperator, mmrdesignatedOperator, MMR_OT_ImportPresets, \
     MMR_OT_Designated
 from addons.MikuMikuRig.operators.Physics import Add_Damping_Tracking, Remove_Damping_Tracking, Assign_Rigidbody, \
@@ -21,7 +23,6 @@ from addons.MikuMikuRig.operators.reload import MMR_OT_OpenPresetFolder
 from common.i18n.i18n import i18n
 from ....common.types.framework import reg_order
 from addons.MikuMikuRig.config import __addon_name__
-from addons.MikuMikuRig.Proxymodel.operator import ProxyModelOperator
 
 def _mmr_panel_poll(context):
     """主版本面板 poll：use_legacy_mode=True 时隐藏"""
@@ -378,7 +379,10 @@ class MMD_Rig_Opt(bpy.types.Panel):
                 if mmr.Import_presets:
                     layout.prop(mmr,"json_filepath",text=i18n('presets'))
                 else:
-                    layout.prop(mmr,"presets",text=i18n('presets'))
+                    row = layout.row(align=True)
+                    row.prop(mmr,"presets",text=i18n('presets'))
+                    row.operator(MMR_OT_OpenPresetFolder.bl_idname, icon='FILE_FOLDER',text="")
+
 
                 row = layout.row()
                 row.operator(mmrmakepresetsOperator.bl_idname, text="make presets")
@@ -399,11 +403,24 @@ class MMD_Rig_Opt(bpy.types.Panel):
                         # 当前选中的骨骼
                         active_bone = context.active_bone
 
+                        box = layout.box()
+
                         if active_bone is not None:
                             if active_bone.display_type == 'BBONE':
-                                row = layout.row()
+                                row = box.row()
                                 row.prop(active_bone, "bbone_x", text=i18n('Display Size X'))
                                 row.prop(active_bone, "bbone_z", text=i18n('Display Size Z'))
+
+                        row = box.row(align=True)
+                        if mmr.switch_proxy_bool:
+                            row.operator(SwitchProxyOperator.bl_idname, text=i18n("Toggle Option"), icon="CHECKBOX_DEHLT", depress=False)
+                        else:
+                            row.operator(SwitchProxyOperator.bl_idname, text=i18n("Toggle Option"), icon="CHECKBOX_HLT", depress=True)
+                        if mmr.Itsclearproxy:
+                            row.operator(ItsclearproxyOperator.bl_idname, text=i18n("Proxy Visibility"), icon="CHECKBOX_DEHLT", depress=False)
+                        else:
+                            row.operator(ItsclearproxyOperator.bl_idname, text=i18n("Proxy Visibility"), icon="CHECKBOX_HLT", depress=True)
+
 
                 layout.prop(mmr, "extras_enabled", text=i18n("Extras"), toggle=True,icon="PREFERENCES")
 
