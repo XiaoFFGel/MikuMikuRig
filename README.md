@@ -9,8 +9,6 @@
 <img width="617" alt="MikuMikuRig 界面预览" src="https://github.com/user-attachments/assets/08400b7d-e782-4d0c-97f3-99aa8b25f480" />
 </div>
 
----
-
 ## 📖 前言 / Foreword
 
 因为原 0.56 版的 MMR 插件对高版本 Blender 的支持不太好，想要更新这个插件，却发现原代码写得太绝对了——一个不对就崩。而我要的是**稳定性**，不是速度，于是就有了这个 MMR。
