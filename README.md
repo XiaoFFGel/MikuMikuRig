@@ -7,11 +7,6 @@
 **[Blender Homemade Plugin] Foolproof MMD Keyframe Plugin**
 
 <img width="617" alt="MikuMikuRig 界面预览" src="https://github.com/user-attachments/assets/08400b7d-e782-4d0c-97f3-99aa8b25f480" />
-
-![Blender](https://img.shields.io/badge/Blender-3.x%20%2F%204.x-orange?logo=blender&logoColor=white)
-![Platform](https://img.shields.io/badge/平台-Windows%20%7C%20Linux%20%7C%20macOS-blue)
-![License](https://img.shields.io/badge/许可-开源-green)
-
 </div>
 
 ---
