@@ -99,12 +99,14 @@ class ProxyModelOperator(bpy.types.Operator):
             else:
                 new_bone_collection = arm.data.collections[collection_name]
 
+            # 分配新骨骼到集合
             for bone_name in bone_names:
                 for bone1_name in new_bone_names:
                     if bone_name in bone1_name:
                         print(bone_name+":"+bone1_name)
                         if arm.pose.bones.get(bone1_name):
                             arm.data.collections[new_bone_collection.name].assign(arm.pose.bones[bone1_name])
+                            arm.pose.bones[bone1_name].mmr_bone.proxy_bool = True # 标记为代理骨骼
 
         # 加载sokj.json
         with open(os.path.join(os.path.dirname(__file__), "sokj.json"), "r") as f:
@@ -119,5 +121,33 @@ class ProxyModelOperator(bpy.types.Operator):
             pb.bone.bbone_x, pb.bone.bbone_z = values[0], values[1]
 
         arm.mmr.openproxy = True
+
+        return {'FINISHED'}
+
+# 切换可选代理
+class SwitchProxyOperator(bpy.types.Operator):
+    '''SwitchProxyOperator'''
+    bl_idname = "mmr.switch_proxy_ops"
+    bl_label = "Switch Proxy"
+    bl_options = {'REGISTER', 'UNDO'}
+
+    @classmethod
+    def poll(cls, context):
+        obj = context.view_layer.objects.active
+        return obj is not None and obj.type == 'ARMATURE' and obj.mode == 'POSE'
+
+    def execute(self, context):
+
+        arm = context.view_layer.objects.active
+
+        arm.mmr.switch_proxy_bool = not arm.mmr.switch_proxy_bool # 切换状态
+
+        for bone in arm.pose.bones:
+            if bone.mmr_bone.proxy_bool:
+
+                if arm.mmr.switch_proxy_bool:
+                    bone.hide_select = True
+                else:
+                    bone.hide_select = False
 
         return {'FINISHED'}
