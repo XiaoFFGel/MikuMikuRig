@@ -132,6 +132,15 @@ class ProxyModelOperator(bpy.types.Operator):
                 continue
             pb.bone.bbone_x, pb.bone.bbone_z = values[0], values[1]
 
+        # 特殊处理
+        for bone in arm.data.bones:
+            if bone.name == "ORG-spine.006_parent_proxy":
+                bone.color.palette = "THEME02"
+                bpy.ops.object.mode_set(mode='EDIT') # 进入编辑模式
+                edit_bone = arm.data.edit_bones.get(bone.name)
+                edit_bone.length = 0.215
+                bpy.ops.object.mode_set(mode='POSE') # 退出编辑模式
+
         arm.mmr.openproxy = True # 打开代理模型
 
         return {'FINISHED'}
@@ -180,6 +189,7 @@ class ItsclearproxyOperator(bpy.types.Operator):
         arm = context.view_layer.objects.active
         arm.mmr.Itsclearproxy = not arm.mmr.Itsclearproxy # 切换状态
 
+        # 遐藏代理骨骼
         for bone in arm.data.bones:
             pose_bone = arm.pose.bones.get(bone.name)
             if pose_bone.mmr_bone.proxy_bool:
