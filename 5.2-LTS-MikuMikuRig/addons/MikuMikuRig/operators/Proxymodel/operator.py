@@ -166,9 +166,9 @@ class SwitchProxyOperator(bpy.types.Operator):
         for pose_bone in arm.pose.bones:
             if pose_bone.mmr_bone.proxy_bool:
                 if arm.mmr.switch_proxy_bool:
-                    pose_bone.hide_select = True
+                    pose_bone.bone.hide_select = True
                 else:
-                    pose_bone.hide_select = False
+                    pose_bone.bone.hide_select = False
 
         return {'FINISHED'}
 
