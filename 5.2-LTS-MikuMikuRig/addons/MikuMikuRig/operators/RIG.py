@@ -1061,6 +1061,12 @@ class mmrrigOperator(bpy.types.Operator):
 
         rigify.matrix_world = RIG.matrix_world # 吸附位置
 
+        # 检查骨骼集合是否存在
+        if not '_parent' in rigify.data.collections:
+            # 新建骨骼集合
+            parent_collection = rigify.data.collections.new(name='_parent')
+            parent_collection.is_visible = False
+
         # 设置父子级
         for key, value in config.items():
 
@@ -1120,7 +1126,7 @@ class mmrrigOperator(bpy.types.Operator):
 
                 # 加入集合
                 bone = rigify.pose.bones.get(value + '_parent')
-                rigify.data.collections_all['ORG'].assign(bone)
+                rigify.data.collections_all['_parent'].assign(bone)
             else:
                 print(f"骨骼 {key} 或 {value} 不存在于骨架中")
 
@@ -1191,7 +1197,7 @@ class mmrrigOperator(bpy.types.Operator):
 
             # 加入集合
             bone = rigify.pose.bones.get(value + '_parent')
-            rigify.data.collections_all['ORG'].assign(bone)
+            rigify.data.collections_all['_parent'].assign(bone)
 
         bpy.ops.object.mode_set(mode='EDIT')
 
@@ -1260,7 +1266,7 @@ class mmrrigOperator(bpy.types.Operator):
                 # 加入集合
                 data_bones = rigify.data.bones
                 t_bone = data_bones.get('ORG-' + k + '_parent')
-                rigify.data.collections_all['ORG'].assign(t_bone)
+                rigify.data.collections_all['_parent'].assign(t_bone)
 
         # 捩骨约束
         for key, value in Twist_bones[1].items():

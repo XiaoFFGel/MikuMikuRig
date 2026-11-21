@@ -194,6 +194,11 @@ class MMR_property(bpy.types.PropertyGroup):
         default=False
     )
 
+    openproxy : BoolProperty(
+        name="Open Proxy",
+        default=False
+    )
+
     # 额外选项
     extras_enabled: BoolProperty(
         name="Extras Enabled",
@@ -463,6 +468,18 @@ class MMR_property(bpy.types.PropertyGroup):
         description="自定义约束名称"
     )
 
+    # 切换可选代理
+    switch_proxy_bool: BoolProperty(
+        default=False,
+        description="是否切换可选代理"
+    )
+
+    # 代理可见
+    Itsclearproxy: BoolProperty(
+        default=False,
+        description="是否可见代理模型"
+    )
+
 class MMR_Weight_bone_parent_fix(bpy.types.PropertyGroup):
     key: StringProperty(name="Key", default="")
     value: StringProperty(name="Value", default="")
@@ -531,6 +548,11 @@ class MMR_bone_property(bpy.types.PropertyGroup):
     Use_manual_influence: bpy.props.BoolProperty(
         default=False,
         description="启用时使用手动设置的影响值，应用于所有选中骨骼"
+    )
+
+    # 代理标记
+    proxy_bool: bpy.props.BoolProperty(
+        default=False
     )
 
 
