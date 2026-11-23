@@ -83,17 +83,13 @@ class mmrmakepresetsOperator(bpy.types.Operator):
     def invoke(self, context, event):
         mmr = context.object.mmr
 
-        if mmr.Reference_bones:
-            return self.execute(context)  # 直接执行
-
         if mmr.make_presets:
             if not self.filepath:
                 self.filepath = "MMR_Presets.json" # 默认文件名
-            if not mmr.Reference_bones:
                 context.window_manager.fileselect_add(self)
         else:
             context.window_manager.invoke_props_dialog(self, width=200) # 显示确认对话框
-
+            
         return {'RUNNING_MODAL'}
 
     def check(self, context):
@@ -117,7 +113,11 @@ class mmrmakepresetsOperator(bpy.types.Operator):
             layout.label(text='确定要退出吗？')
         else:
             layout.label(text='参照物：')
-            layout.prop(mmr, "Reference_bones", text=i18n("Reference bones"))
+            layout.prop(mmr, "Reference_bones", text="导入MMR_Rig_relative骨架为参考")
+
+            if mmr.Reference_bones:
+                layout.label(text='如 MMR_Rig_relative 与你的骨架不匹配')
+                layout.label(text='可以修改 MMR_Rig_relative')
 
 class mmrdesignatedOperator(bpy.types.Operator):
     '''designated presets'''

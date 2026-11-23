@@ -205,7 +205,14 @@ class mmrrigOperator(bpy.types.Operator):
         mmr = context.object.mmr
 
         # 选择的骨架
-        selected_arm = [arm for arm in bpy.data.objects if arm.select]
+        selected_arm = []
+
+        for arm in bpy.data.objects:
+            if arm.select:
+                if arm.type == 'ARMATURE':
+                    if arm.name != 'MMR_Rig_relative':
+                        selected_arm.append(arm)
+
         print("选择的骨架:", selected_arm)
 
         prefs = context.preferences.addons[__addon_name__].preferences
