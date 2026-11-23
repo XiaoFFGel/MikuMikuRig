@@ -89,7 +89,7 @@ class mmrmakepresetsOperator(bpy.types.Operator):
                 context.window_manager.fileselect_add(self)
         else:
             context.window_manager.invoke_props_dialog(self, width=200) # 显示确认对话框
-            
+
         return {'RUNNING_MODAL'}
 
     def check(self, context):
