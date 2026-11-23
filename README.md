@@ -41,5 +41,5 @@ The original 0.56 version of the MMR plugin did not support higher Blender versi
 
 ## 🙏 调用项目 / Credits
 
-- BoneAnimCopy Tool
-- MMD Tools
+- [BoneAnimCopy Tool](https://github.com/kumopult/blender_BoneAnimCopy)
+- [MMD Tools](https://github.com/MMD-Blender/blender_mmd_tools)
