@@ -116,6 +116,7 @@ class mmrmakepresetsOperator(bpy.types.Operator):
         if not mmr.make_presets:
             layout.label(text='确定要退出吗？')
         else:
+            layout.label(text='参照物：')
             layout.prop(mmr, "Reference_bones", text=i18n("Reference bones"))
 
 class mmrdesignatedOperator(bpy.types.Operator):
