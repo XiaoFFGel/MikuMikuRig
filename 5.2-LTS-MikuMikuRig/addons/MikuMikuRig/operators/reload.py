@@ -14,9 +14,9 @@ from bpy.types import (
     PropertyGroup,
     UIList,
 )
-from addons.MikuMikuRig.panels import get_presets_directory
-from common.types.framework import reg_order
 
+from ..panels import get_presets_directory
+from ....common.types.framework import reg_order
 
 def open_system_folder(path):
     """跨平台打开文件夹"""

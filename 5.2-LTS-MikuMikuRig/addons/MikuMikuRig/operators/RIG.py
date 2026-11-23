@@ -7,9 +7,8 @@ from math import radians
 import bpy
 import numpy as np
 
-from addons.MikuMikuRig import has_keyframes_for_property
-from addons.MikuMikuRig.config import __addon_name__
-
+from .. import has_keyframes_for_property
+from ..config import __addon_name__
 
 class polartargetOperator(bpy.types.Operator):
     '''Optimization MMD Armature'''

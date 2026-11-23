@@ -1,5 +1,3 @@
-from math import radians
-
 import bpy
 
 # 添加阻尼跟踪

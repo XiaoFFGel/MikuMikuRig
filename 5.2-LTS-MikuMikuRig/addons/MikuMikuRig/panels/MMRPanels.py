@@ -3,26 +3,26 @@ from numpy.f2py.capi_maps import depargs
 
 from ..operators.Proxymodel.operator import SwitchProxyOperator, ProxyModelOperator, ItsclearproxyOperator
 
-from addons.MikuMikuRig.operators.MMRpresets import mmrmakepresetsOperator, mmrdesignatedOperator, MMR_OT_ImportPresets, \
+from ..operators.MMRpresets import mmrmakepresetsOperator, mmrdesignatedOperator, MMR_OT_ImportPresets, \
     MMR_OT_Designated
-from addons.MikuMikuRig.operators.Physics import Add_Damping_Tracking, Remove_Damping_Tracking, Assign_Rigidbody, \
+from ..operators.Physics import Add_Damping_Tracking, Remove_Damping_Tracking, Assign_Rigidbody, \
     Show_Rigidbody, Select_Collision_Group, Update_World, Select_By_Type, \
     mmdrigidbody_to_mmrrigidbody, Remove_physics, Show_Joint, Select_Collision_Group_For_Joint, \
     Select_By_Type_For_Joint, mmr_rigidbody_to_mmd_rigidbody, Clear_Collision_Group_Mask, Bake_Physics_To_Bone, \
     Select_All_Rigid_Bodies, Set_Damping_Tracking_Influence, Set_Constraint_Influence
-from addons.MikuMikuRig.operators.RIG import mmrexportvmdactionsOperator, MahyPdtOperator, \
+from ..operators.RIG import mmrexportvmdactionsOperator, MahyPdtOperator, \
     MMR_OT_Batch_Adjust_Shape_Key, MMR_OT_Insert_Keyframe, MMR_OT_Unselect_All_Key, \
     MMR_OT_Select_All_Key, MMR_OT_Select_Keyframe_Key, MMR_OT_Weight_Bone_Parent_Add, MMR_OT_Weight_Bone_Parent_Del, \
     MMR_OT_Import_Default_Weight_Bone_Parent, MMR_OT_Import_Default_Automatic_IK_Bone_Chain, \
     MMR_OT_Add_Automatic_IK_Bone_Chain, MMR_OT_Remove_Automatic_IK_Bone_Chain, \
     MMR_OT_Add_Automatic_IK_Bone_Chain_Separator, MMR_OT_Designated_Bone_Chain, MMR_OT_Controller_Wireframe_Width
-from addons.MikuMikuRig.operators.RIG import mmrrigOperator
-from addons.MikuMikuRig.operators.RIG import polartargetOperator
-from addons.MikuMikuRig.operators.redirect import MMR_redirect, MMR_Import_VMD
-from addons.MikuMikuRig.operators.reload import MMR_OT_OpenPresetFolder
-from common.i18n.i18n import i18n
+from ..operators.RIG import mmrrigOperator
+from ..operators.RIG import polartargetOperator
+from ..operators.redirect import MMR_redirect, MMR_Import_VMD
+from ..operators.reload import MMR_OT_OpenPresetFolder
+from ....common.i18n.i18n import i18n
 from ....common.types.framework import reg_order
-from addons.MikuMikuRig.config import __addon_name__
+from ..config import __addon_name__
 
 
 def _mmr_panel_poll(context):

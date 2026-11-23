@@ -1,8 +1,7 @@
-import shutil
-import subprocess
-import bpy
 import json
 import os
+
+import bpy
 
 
 class mmrmakepresetsOperator(bpy.types.Operator):

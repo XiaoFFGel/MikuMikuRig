@@ -1,7 +1,5 @@
 import os
 import bpy
-from mathutils import Matrix
-from mathutils import Vector
 
 class MMR_redirect(bpy.types.Operator):
     """ Import FBX actions """
