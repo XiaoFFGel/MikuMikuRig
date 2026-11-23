@@ -3,6 +3,8 @@ import os
 
 import bpy
 
+from addon_release.MikuMikuRig.common.i18n.i18n import i18n
+
 
 class mmrmakepresetsOperator(bpy.types.Operator):
     '''make presets'''
@@ -59,11 +61,10 @@ class mmrmakepresetsOperator(bpy.types.Operator):
                 filename=filename,
             )
             mmr.Reference_bones = False
-            return {'FINISHED'}
 
         if mmr.make_presets:
             # 初始化
-            self.filepath = bpy.path.splitext(self.filepath)[0] # 移除文件扩展名
+            self.filepath = os.path.splitext(self.filepath)[0] # 移除文件扩展名
             self.filepath += ".json" # 确保文件名是.json格式
             mmr.filepath = self.filepath
             mmr.make_presets = False
@@ -91,7 +92,7 @@ class mmrmakepresetsOperator(bpy.types.Operator):
             if not mmr.Reference_bones:
                 context.window_manager.fileselect_add(self)
         else:
-            context.window_manager.invoke_props_dialog(self, width=200)
+            context.window_manager.invoke_props_dialog(self, width=200) # 显示确认对话框
 
         return {'RUNNING_MODAL'}
 
@@ -114,6 +115,8 @@ class mmrmakepresetsOperator(bpy.types.Operator):
         mmr = context.object.mmr
         if not mmr.make_presets:
             layout.label(text='确定要退出吗？')
+        else:
+            layout.prop(mmr, "Reference_bones", text=i18n("Reference bones"))
 
 class mmrdesignatedOperator(bpy.types.Operator):
     '''designated presets'''
