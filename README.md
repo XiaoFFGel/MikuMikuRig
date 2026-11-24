@@ -42,7 +42,7 @@ The original 0.56 version of the MMR plugin did not support higher Blender versi
 ## 📌 分支状态 / Branch Status
 
 - **Blender 5.2**：当前活跃版本，持续更新 / Actively maintained
-- **Blender 4.5**：最终版本为 [4.5-4.00 LTS](https://github.com/XiaoFFGel/MikuMikuRig/releases/tag/MikuMikuRig-4.5-4.00-LTS)，**已停止更新** / Final release, **no longer updated**
+- **Blender 4.5**：最终版本为 [4.5-4.10 LTS](https://github.com/XiaoFFGel/MikuMikuRig/releases/tag/MikuMikuRig-4.5-4.10-LTS)，**已停止更新** / Final release, **no longer updated**
 - **Blender 3.6**：最终版本为 [3.6-3.10 LTS](https://github.com/XiaoFFGel/MikuMikuRig/releases/tag/MikuMikuRig-3.6-3.10-LTS)，**已停止更新** / Final release, **no longer updated**
 
 ---
