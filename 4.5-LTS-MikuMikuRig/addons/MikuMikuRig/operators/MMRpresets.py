@@ -10,6 +10,8 @@ class mmrmakepresetsOperator(bpy.types.Operator):
     bl_idname = "object.mmr_make_presets"
     bl_label = "make presets"
 
+    filename_ext = ".json"
+
     # 确保在操作之前备份数据，用户撤销操作时可以恢复
     bl_options = {'REGISTER', 'UNDO'}
 
@@ -58,7 +60,6 @@ class mmrmakepresetsOperator(bpy.types.Operator):
                 filename=filename,
             )
             mmr.Reference_bones = False
-            return {'FINISHED'}
 
         if mmr.make_presets:
             # 初始化
@@ -87,6 +88,20 @@ class mmrmakepresetsOperator(bpy.types.Operator):
             context.window_manager.invoke_props_dialog(self, width=200)
 
         return {'RUNNING_MODAL'}
+
+    def check(self, context):
+        # 文件浏览器中文件名变化 / 回车时被调用；返回 True 会刷新界面
+        if not self.filepath or not os.path.basename(self.filepath):
+            return False
+
+        # 确保文件扩展名是.json
+        filepath = bpy.path.ensure_ext(os.path.splitext(self.filepath)[0], self.filename_ext)
+
+        # 如果文件路径有变化，更新filepath
+        if filepath != self.filepath:
+            self.filepath = filepath
+            return True
+        return False
 
     def draw(self, context):
         layout = self.layout
