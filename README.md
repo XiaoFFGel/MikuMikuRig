@@ -39,6 +39,21 @@ The original 0.56 version of the MMR plugin did not support higher Blender versi
 
 ---
 
+## 贡献 / Contributing
+
+MikuMikuRig needs contributions such as:
+
+MikuMikuRig 需要以下贡献：
+
+- Document writing / translation 文档撰写/翻译
+- Video creation / translation 视频制作/翻译
+
+- Bug reports 错误报告
+- Feature requests 功能请求
+- Pull requests 拉取请求
+
+---
+
 ## 分支状态 / Branch Status
 
 - **Blender 5.2**：当前活跃版本，持续更新 / Actively maintained
