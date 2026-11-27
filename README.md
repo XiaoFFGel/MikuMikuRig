@@ -9,7 +9,7 @@
 <img width="617" alt="MikuMikuRig 界面预览" src="https://github.com/user-attachments/assets/08400b7d-e782-4d0c-97f3-99aa8b25f480" />
 </div>
 
-## 📖 前言 / Foreword
+## 前言 / Foreword
 
 因为原 0.56 版的 MMR 插件对高版本 Blender 的支持不太好，想要更新这个插件，却发现原代码写得太绝对了——一个不对就崩。而我要的是**稳定性**，不是速度，于是就有了这个 MMR。
 
@@ -21,7 +21,7 @@ The original 0.56 version of the MMR plugin did not support higher Blender versi
 
 ---
 
-## ✨ 功能 / Functions
+## 功能 / Functions
 
 | 功能 | 说明 | Description |
 | --- | --- | --- |
@@ -32,14 +32,14 @@ The original 0.56 version of the MMR plugin did not support higher Blender versi
 
 ---
 
-## 🎬 视频教程 / Video Tutorials
+## 视频教程 / Video Tutorials
 
 - [视频演示（Bilibili）](https://www.bilibili.com/video/BV1FnzpYKE8R)
 - [MMR 插件基础使用教学（Bilibili）](https://www.bilibili.com/opus/1167803398842482693)
 
 ---
 
-## 📌 分支状态 / Branch Status
+## 分支状态 / Branch Status
 
 - **Blender 5.2**：当前活跃版本，持续更新 / Actively maintained
 - **Blender 4.5**：最终版本为 [4.5-4.10 LTS](https://github.com/XiaoFFGel/MikuMikuRig/releases/tag/MikuMikuRig-4.5-4.10-LTS)，**已停止更新** / Final release, **no longer updated**
@@ -47,7 +47,7 @@ The original 0.56 version of the MMR plugin did not support higher Blender versi
 
 ---
 
-## 🙏 调用项目 / Credits
+## 调用项目 / Credits
 
 - [BoneAnimCopy Tool](https://github.com/kumopult/blender_BoneAnimCopy)
 - [MMD Tools](https://github.com/MMD-Blender/blender_mmd_tools)
